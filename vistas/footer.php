@@ -2,7 +2,7 @@
     <div class="pull-right hidden-xs">
       <b>Version</b> 0.0.1
     </div>
-    <strong>Copyright &copy; 2023 <!--<a target="_blank" href="https://www.youtube.com/channel/UC-O4MJh9KfFBYsIfjzeaYPw">Referencia</a>-->.</strong> Todo los derechos
+    <strong>Copyright &copy; 2023 <a target="_blank" href="h//www.youtube.com/channel/UC-O4MJh9KfFBYsIfjzeaYPw">Referencia</a>.</strong> Todo los derechos
     reservados.
   </footer>
 

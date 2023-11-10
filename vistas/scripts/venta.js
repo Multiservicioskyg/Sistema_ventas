@@ -255,7 +255,7 @@ function calcularTotales(){
 	for (var i = 0; i < sub.length; i++) {
 		total += document.getElementsByName("subtotal")[i].value;
 	}
-	$("#total").html("$" + total);
+	$("#total").html("S/." + total);
 	$("#total_venta").val(total);
 	evaluar();
 }

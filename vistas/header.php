@@ -59,10 +59,7 @@ if (strlen(session_id())<1)
               <!-- User image -->
               <li class="user-header">
                 <img src="../files/usuarios/<?php echo $_SESSION['imagen']; ?>" class="img-circle" alt="User Image">
-
-                <p>
-                  
-                </p>
+                                
               </li>
               <!-- Menu Footer-->
               <li class="user-footer">
@@ -108,7 +105,7 @@ if ($_SESSION['almacen']==1) {
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="articulo.php"><i class="fa fa-circle-o"></i> Servicios</a></li>
+            <li><a href="servicio.php"><i class="fa fa-circle-o"></i> Servicios</a></li>
             <li><a href="categoria.php"><i class="fa fa-circle-o"></i> Categorias</a></li>
           </ul>
         </li>';
@@ -118,15 +115,15 @@ if ($_SESSION['almacen']==1) {
 if ($_SESSION['compras']==1) {
   echo ' <li class="treeview">
           <a href="#">
-            <i class="fa fa-th"></i> <span>Herramientas</span>
+            <i class="fa fa-th"></i> <span>Herramienta</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-          <li><a href="herramientas.php"><i class="fa fa-circle-o"></i> Herramientas</a></li>
-            <!--<li><a href="ingreso.php"><i class="fa fa-circle-o"></i> Ingresos</a></li>-->
-            <!--<li><a href="proveedor.php"><i class="fa fa-circle-o"></i> Proveedores</a></li>-->
+          <li><a href="herramienta.php"><i class="fa fa-circle-o"></i> Herramientas</a></li>
+          <!--<li><a href="ingreso.php"><i class="fa fa-circle-o"></i> Ingresos</a></li>-->
+          <!--<li><a href="proveedor.php"><i class="fa fa-circle-o"></i> Proveedores</a></li>-->
           </ul>
         </li>';
 }
@@ -166,9 +163,9 @@ if ($_SESSION['acceso']==1) {
 }
         ?>  
                                      <?php 
-/*if ($_SESSION['consultac']==1) {
+if ($_SESSION['consultac']==1) {
   echo '     <li class="treeview">
-          <a href="#">
+          <!--<a href="#">
             <i class="fa fa-bar-chart"></i> <span>Consulta Compras</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
@@ -176,9 +173,9 @@ if ($_SESSION['acceso']==1) {
           </a>
           <ul class="treeview-menu">
             <li><a href="comprasfecha.php"><i class="fa fa-circle-o"></i>Compras por fechas</a></li>
-          </ul>
+          </ul>-->
         </li>';
-}*/
+}
         ?>  
               
                                                 <?php 
