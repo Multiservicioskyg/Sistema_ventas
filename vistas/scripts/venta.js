@@ -51,7 +51,7 @@ function mostrarform(flag){
 		$("#formularioregistros").show();
 		//$("#btnGuardar").prop("disabled",false);
 		$("#btnagregar").hide();
-		listarArticulos();
+		listarServicios();
 
 		$("#btnGuardar").hide();
 		$("#btnCancelar").show();
@@ -81,7 +81,6 @@ function listar(){
 		buttons: [
                   'copyHtml5',
                   'excelHtml5',
-                  'csvHtml5',
                   'pdf'
 		],
 		"ajax":
@@ -99,8 +98,8 @@ function listar(){
 	}).DataTable();
 }
 
-function listarArticulos(){
-	tabla=$('#tblarticulos').dataTable({
+function listarServicios(){
+	tabla=$('#tblservicio').dataTable({
 		"aProcessing": true,//activamos el procedimiento del datatable
 		"aServerSide": true,//paginacion y filrado realizados por el server
 		dom: 'Bfrtip',//definimos los elementos del control de la tabla
@@ -109,7 +108,7 @@ function listarArticulos(){
 		],
 		"ajax":
 		{
-			url:'../ajax/venta.php?op=listarArticulos',
+			url:'../ajax/venta.php?op=listarServicios',
 			type: "get",
 			dataType : "json",
 			error:function(e){
@@ -186,7 +185,7 @@ function anular(idventa){
 }
 
 //declaramos variables necesarias para trabajar con las compras y sus detalles
-var impuesto=18;
+var impuesto=13;
 var cont=0;
 var detalles=0;
 
@@ -202,15 +201,15 @@ function marcarImpuesto(){
 	}
 }
 
-function agregarDetalle(idarticulo,articulo,precio_venta){
+function agregarDetalle(idservicio,servicio,precio_venta){
 	var cantidad=1;
 	var descuento=0;
 
-	if (idarticulo!="") {
+	if (idservicio!="") {
 		var subtotal=cantidad*precio_venta;
 		var fila='<tr class="filas" id="fila'+cont+'">'+
         '<td><button type="button" class="btn btn-danger" onclick="eliminarDetalle('+cont+')">X</button></td>'+
-        '<td><input type="hidden" name="idarticulo[]" value="'+idarticulo+'">'+articulo+'</td>'+
+        '<td><input type="hidden" name="idservicio[]" value="'+idservicio+'">'+servicio+'</td>'+
         '<td><input type="number" name="cantidad[]" id="cantidad[]" value="'+cantidad+'"></td>'+
         '<td><input type="number" name="precio_venta[]" id="precio_venta[]" value="'+precio_venta+'"></td>'+
         '<td><input type="number" name="descuento[]" value="'+descuento+'"></td>'+
@@ -223,7 +222,7 @@ function agregarDetalle(idarticulo,articulo,precio_venta){
 		modificarSubtotales();
 
 	}else{
-		alert("error al ingresar el detalle, revisar las datos del articulo ");
+		alert("error al ingresar el detalle, revisar las datos del servicio ");
 	}
 }
 

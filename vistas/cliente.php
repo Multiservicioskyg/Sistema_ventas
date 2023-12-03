@@ -18,7 +18,8 @@ if ($_SESSION['ventas']==1) {
         <div class="col-md-12">
       <div class="box">
 <div class="box-header with-border">
-  <h1 class="box-title">Clientes <button class="btn btn-success" onclick="mostrarform(true)"><i class="fa fa-plus-circle"></i>Agregar</button></h1>
+  <h1 class="box-title">Clientes <button class="btn btn-success" onclick="mostrarform(true)">
+  <i class="fa fa-plus-circle"></i>Agregar</button></h1>
   <div class="box-tools pull-right">
     
   </div>
@@ -53,36 +54,44 @@ if ($_SESSION['ventas']==1) {
       <label for="">Nombre</label>
       <input class="form-control" type="hidden" name="idpersona" id="idpersona">
       <input class="form-control" type="hidden" name="tipo_persona" id="tipo_persona" value="Cliente">
-      <input class="form-control" type="text" name="nombre" id="nombre" maxlength="100" placeholder="Nombre del cliente" required>
+      <input class="form-control" type="text" name="nombre" id="nombre" maxlength="100" 
+      placeholder="Nombre del cliente" required>
     </div>
      <div class="form-group col-lg-6 col-md-6 col-xs-12">
       <label for="">Tipo Dcumento</label>
      <select class="form-control select-picker" name="tipo_documento" id="tipo_documento" required>
-       <option value="DNI">DUI</option>
-       <option value="RUC">NIT</option>
-       <option value="CEDULA">PASAPORTE</option>
+       <option value="DUI">DUI</option>
+       <option value="NIT">NIT</option>
+       <option value="PASAPORTE">PASAPORTE</option>
      </select>
     </div>
      <div class="form-group col-lg-6 col-md-6 col-xs-12">
       <label for="">Número Documento</label>
-      <input class="form-control" type="text" name="num_documento" id="num_documento" maxlength="20" placeholder="Número de Documento">
+      <input class="form-control" type="text" name="num_documento" id="num_documento" 
+      maxlength="20" placeholder="Número de Documento">
     </div>
     <div class="form-group col-lg-6 col-md-6 col-xs-12">
       <label for="">Direccion</label>
-      <input class="form-control" type="text" name="direccion" id="direccion" maxlength="70" placeholder="Direccion">
+      <input class="form-control" type="text" name="direccion" id="direccion" maxlength="70"
+       placeholder="Direccion">
     </div>
     <div class="form-group col-lg-6 col-md-6 col-xs-12">
       <label for="">Telefono</label>
-      <input class="form-control" type="text" name="telefono" id="telefono" maxlength="20" placeholder="Número de Telefono">
+      <input class="form-control" type="text" name="telefono" id="telefono" maxlength="20" 
+      placeholder="Número de Telefono">
     </div>
         <div class="form-group col-lg-6 col-md-6 col-xs-12">
       <label for="">Email</label>
-      <input class="form-control" type="email" name="email" id="email" maxlength="50" placeholder="Email">
+      <input class="form-control" type="email" name="email" id="email" maxlength="50" 
+      placeholder="Email">
     </div>
     <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
-      <button class="btn btn-primary" type="submit" id="btnGuardar"><i class="fa fa-save"></i>  Guardar</button>
+      <button class="btn btn-primary" type="submit" id="btnGuardar"><i class="fa fa-save">
 
-      <button class="btn btn-danger" onclick="cancelarform()" type="button"><i class="fa fa-arrow-circle-left"></i> Cancelar</button>
+      </i>  Guardar</button>
+
+      <button class="btn btn-danger" onclick="cancelarform()" type="button">
+      <i class="fa fa-arrow-circle-left"></i> Cancelar</button>
     </div>
   </form>
 </div>

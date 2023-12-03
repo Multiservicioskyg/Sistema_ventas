@@ -1,8 +1,8 @@
   <footer class="main-footer">
     <div class="pull-right hidden-xs">
-      <b>Version</b> 0.0.1
+      <b>Version</b> 1.0.3
     </div>
-    <strong>Copyright &copy; 2023 <!--<a target="_blank" href="https://www.youtube.com/channel/UC-O4MJh9KfFBYsIfjzeaYPw">Referencia</a>-->.</strong> Todo los derechos
+    <strong>Copyright &copy; 2023 <a target="_blank" href="#">Referencia</a>.</strong> Todo los derechos
     reservados.
   </footer>
 

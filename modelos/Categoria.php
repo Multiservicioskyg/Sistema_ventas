@@ -9,7 +9,7 @@ public function __construct(){
 
 }
 
-//metodo insertar regiustro
+//metodo insertar registro
 public function insertar($nombre,$descripcion){
 	$sql="INSERT INTO categoria (nombre,descripcion,condicion) VALUES ('$nombre','$descripcion','1')";
 	return ejecutarConsulta($sql);

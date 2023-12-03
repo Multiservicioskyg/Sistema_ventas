@@ -77,7 +77,7 @@ $rsptad=$venta->ventadetalles($_GET["id"]);
 
 while($regd=$rsptad->fetch_object()){
   $line = array( "CODIGO"=>"$regd->codigo",
-                 "DESCRIPCION"=>utf8_decode("$regd->articulo"),
+                 "DESCRIPCION"=>utf8_decode("$regd->servicio"),
                  "CANTIDAD"=>"$regd->cantidad",
                  "P.U."=>"$regd->precio_venta",
                  "DSCTO"=>"$regd->descuento",

@@ -31,8 +31,7 @@ function listar(){
 		dom: 'Bfrtip',//definimos los elementos del control de la tabla
 		buttons: [
                   'copyHtml5',
-                  'excelHtml5',
-                  'csvHtml5',
+                  'excelHtml5',                  
                   'pdf'
 		],
 		"ajax":

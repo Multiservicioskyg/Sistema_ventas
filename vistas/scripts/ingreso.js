@@ -80,8 +80,7 @@ function listar(){
 		dom: 'Bfrtip',//definimos los elementos del control de la tabla
 		buttons: [
                   'copyHtml5',
-                  'excelHtml5',
-                  'csvHtml5',
+                  'excelHtml5',                  
                   'pdf'
 		],
 		"ajax":
@@ -186,7 +185,7 @@ function anular(idingreso){
 }
 
 //declaramos variables necesarias para trabajar con las compras y sus detalles
-var impuesto=18;
+var impuesto=13;
 var cont=0;
 var detalles=0;
 

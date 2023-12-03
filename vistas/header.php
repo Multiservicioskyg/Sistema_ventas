@@ -52,23 +52,19 @@ if (strlen(session_id())<1)
 
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="../files/usuarios/<?php echo $_SESSION['imagen']; ?>" class="user-image" alt="User Image">
+              <img src="../files/usuarios/<?php echo $_SESSION['imagen']; 
+              ?>" class="user-image" alt="User Image">
               <span class="hidden-xs"><?php echo $_SESSION['nombre']; ?></span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <img src="../files/usuarios/<?php echo $_SESSION['imagen']; ?>" class="img-circle" alt="User Image">
-
-                <p>
-                  
-                </p>
+                <img src="../files/usuarios/<?php echo $_SESSION['imagen'];
+                 ?>" class="img-circle" alt="User Image">
+                                
               </li>
               <!-- Menu Footer-->
-              <li class="user-footer">
-                <div class="pull-left">
-                  <a href="#" class="btn btn-default btn-flat">Perfil</a>
-                </div>
+              <li class="user-footer">                
                 <div class="pull-right">
                   <a href="../ajax/usuario.php?op=salir" class="btn btn-default btn-flat">Salir</a>
                 </div>
@@ -93,40 +89,40 @@ if (strlen(session_id())<1)
 
 <br>
        <?php 
-if ($_SESSION['escritorio']==1) {
+if ($_SESSION['graficos']==1) {
   echo ' <li><a href="escritorio.php"><i class="fa  fa-dashboard (alias)"></i> <span>Graficos</span></a>
         </li>';
 }
         ?>
                <?php 
-if ($_SESSION['almacen']==1) {
+if ($_SESSION['servicios']==1) {
   echo ' <li class="treeview">
           <a href="#">
-            <i class="fa fa-laptop"></i> <span>Elementos</span>
+            <i class="fa fa-laptop"></i> <span>Servicios</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="articulo.php"><i class="fa fa-circle-o"></i> Servicios</a></li>
+            <li><a href="servicio.php"><i class="fa fa-circle-o"></i> Servicios</a></li>
             <li><a href="categoria.php"><i class="fa fa-circle-o"></i> Categorias</a></li>
           </ul>
         </li>';
 }
         ?>
                <?php 
-if ($_SESSION['compras']==1) {
+if ($_SESSION['herramientas']==1) {
   echo ' <li class="treeview">
           <a href="#">
-            <i class="fa fa-th"></i> <span>Herramientas</span>
+            <i class="fa fa-th"></i> <span>Herramienta</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-          <li><a href="herramientas.php"><i class="fa fa-circle-o"></i> Herramientas</a></li>
-            <!--<li><a href="ingreso.php"><i class="fa fa-circle-o"></i> Ingresos</a></li>-->
-            <!--<li><a href="proveedor.php"><i class="fa fa-circle-o"></i> Proveedores</a></li>-->
+          <li><a href="herramienta.php"><i class="fa fa-circle-o"></i> Herramientas</a></li>
+          <!--<li><a href="ingreso.php"><i class="fa fa-circle-o"></i> Ingresos</a></li>-->
+          <!--<li><a href="proveedor.php"><i class="fa fa-circle-o"></i> Proveedores</a></li>-->
           </ul>
         </li>';
 }
@@ -166,9 +162,9 @@ if ($_SESSION['acceso']==1) {
 }
         ?>  
                                      <?php 
-/*if ($_SESSION['consultac']==1) {
+if ($_SESSION['consultac']==1) {
   echo '     <li class="treeview">
-          <a href="#">
+          <!--<a href="#">
             <i class="fa fa-bar-chart"></i> <span>Consulta Compras</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
@@ -176,9 +172,9 @@ if ($_SESSION['acceso']==1) {
           </a>
           <ul class="treeview-menu">
             <li><a href="comprasfecha.php"><i class="fa fa-circle-o"></i>Compras por fechas</a></li>
-          </ul>
+          </ul>-->
         </li>';
-}*/
+}
         ?>  
               
                                                 <?php 

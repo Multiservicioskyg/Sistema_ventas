@@ -40,7 +40,8 @@ public function editar($idusuario,$nombre,$tipo_documento,$num_documento,$direcc
 	 $sw=true;
 	 while ($num_elementos < count($permisos)) {
 
-	 	$sql_detalle="INSERT INTO usuario_permiso (idusuario,idpermiso) VALUES('$idusuario','$permisos[$num_elementos]')";
+	 	$sql_detalle="INSERT INTO usuario_permiso (idusuario,idpermiso) VALUES
+		('$idusuario','$permisos[$num_elementos]')";
 
 	 	ejecutarConsulta($sql_detalle) or $sw=false;
 
@@ -79,7 +80,8 @@ public function listarmarcados($idusuario){
 
 public function verificar($login,$clave){
 
-	$sql="SELECT idusuario,nombre,tipo_documento,num_documento,telefono,email,cargo,imagen,login FROM usuario WHERE login='$login' AND clave='$clave' AND condicion='1'";
+	$sql="SELECT idusuario,nombre,tipo_documento,num_documento,telefono,email,cargo,imagen,
+	login FROM usuario WHERE login='$login' AND clave='$clave' AND condicion='1'";
 	 return ejecutarConsulta($sql);
 
 }

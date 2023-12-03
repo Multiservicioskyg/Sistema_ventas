@@ -21,7 +21,10 @@ if ($_SESSION['ventas']==1) {
         <div class="col-md-12">
       <div class="box">
 <div class="box-header with-border">
-  <h1 class="box-title">Ventas <button class="btn btn-success" onclick="mostrarform(true)"><i class="fa fa-plus-circle"></i>Agregar</button></h1>
+  <h1 class="box-title">Ventas <button class="btn btn-success" onclick="mostrarform(true)">
+  <i class="fa fa-plus-circle"></i>Agregar</button></h1>  
+  <h1 class="box-title">Qr <a class="btn btn-danger" href="../reportes/codeqr.php">Ver QR</a></h1>
+
   <div class="box-tools pull-right">
     
   </div>
@@ -36,7 +39,7 @@ if ($_SESSION['ventas']==1) {
       <th>Cliente</th>
       <th>Usuario</th>
       <th>Documento</th>
-      <th>Número</th>
+      <th>Número</th>      
       <th>Total Venta</th>
       <th>Estado</th>
     </thead>
@@ -59,7 +62,8 @@ if ($_SESSION['ventas']==1) {
     <div class="form-group col-lg-8 col-md-8 col-xs-12">
       <label for="">Cliente(*):</label>
       <input class="form-control" type="hidden" name="idventa" id="idventa">
-      <select name="idcliente" id="idcliente" class="form-control selectpicker" data-live-search="true" required>
+      <select name="idcliente" id="idcliente" class="form-control selectpicker" 
+      data-live-search="true" required>
         
       </select>
     </div>
@@ -70,18 +74,20 @@ if ($_SESSION['ventas']==1) {
      <div class="form-group col-lg-6 col-md-6 col-xs-12">
       <label for="">Tipo Comprobante(*): </label>
      <select name="tipo_comprobante" id="tipo_comprobante" class="form-control selectpicker" required>
-       <option value="Boleta">Factura</option>
-       <option value="Factura">CCF</option>
+       <option value="CCF">CCF</option>
+       <option value="Factura">Factura</option>
        <option value="Ticket">Ticket</option>
      </select>
     </div>
      <div class="form-group col-lg-2 col-md-2 col-xs-6">
       <label for="">Serie: </label>
-      <input class="form-control" type="text" name="serie_comprobante" id="serie_comprobante" maxlength="7" placeholder="Serie">
+      <input class="form-control" type="text" name="serie_comprobante" id="serie_comprobante" 
+      maxlength="7" placeholder="Serie">
     </div>
      <div class="form-group col-lg-2 col-md-2 col-xs-6">
       <label for="">Número: </label>
-      <input class="form-control" type="text" name="num_comprobante" id="num_comprobante" maxlength="10" placeholder="Número" required>
+      <input class="form-control" type="text" name="num_comprobante" id="num_comprobante" 
+      maxlength="10" placeholder="Número" required>
     </div>
     <div class="form-group col-lg-2 col-md-2 col-xs-6">
       <label for="">Impuesto: </label>
@@ -89,7 +95,8 @@ if ($_SESSION['ventas']==1) {
     </div>
     <div class="form-group col-lg-3 col-md-3 col-sm-6 col-xs-12">
      <a data-toggle="modal" href="#myModal">
-       <button id="btnAgregarArt" type="button" class="btn btn-primary"><span class="fa fa-plus"></span>Agregar Servicio</button>
+       <button id="btnAgregarArt" type="button" class="btn btn-primary">
+        <span class="fa fa-plus"></span>Agregar Servicio</button>
      </a>
     </div>
 <div class="form-group col-lg-12 col-md-12 col-xs-12">
@@ -116,8 +123,11 @@ if ($_SESSION['ventas']==1) {
      </table>
     </div>
     <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
-      <button class="btn btn-primary" type="submit" id="btnGuardar"><i class="fa fa-save"></i>  Guardar</button>
-      <button class="btn btn-danger" onclick="cancelarform()" type="button" id="btnCancelar"><i class="fa fa-arrow-circle-left"></i> Cancelar</button>
+      <button class="btn btn-primary" type="submit" id="btnGuardar"><i class="fa fa-save">
+
+      </i>  Guardar</button>
+      <button class="btn btn-danger" onclick="cancelarform()" type="button" id="btnCancelar">
+      <i class="fa fa-arrow-circle-left"></i> Cancelar</button>
     </div>
   </form>
 </div>
@@ -132,7 +142,8 @@ if ($_SESSION['ventas']==1) {
   </div>
 
   <!--Modal-->
-  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+   aria-hidden="true">
     <div class="modal-dialog" style="width: 65% !important;">
       <div class="modal-content">
         <div class="modal-header">
@@ -140,15 +151,13 @@ if ($_SESSION['ventas']==1) {
           <h4 class="modal-title">Seleccione un Servicio</h4>
         </div>
         <div class="modal-body">
-          <table id="tblarticulos" class="table table-striped table-bordered table-condensed table-hover">
+          <table id="tblservicio" class="table table-striped table-bordered table-condensed table-hover">
             <thead>
               <th>Opciones</th>
               <th>Nombre</th>
               <th>Categoria</th>
-              <th>Código</th>
-              <th>Stock</th>
-              <th>Precio Venta</th>
-              <th>Imagen</th>
+              <th>Código</th>              
+              <th>Imagen</th>              
             </thead>
             <tbody>
               
@@ -157,9 +166,7 @@ if ($_SESSION['ventas']==1) {
               <th>Opciones</th>
               <th>Nombre</th>
               <th>Categoria</th>
-              <th>Código</th>
-              <th>Stock</th>
-              <th>Precio Venta</th>
+              <th>Código</th>              
               <th>Imagen</th>
             </tfoot>
           </table>
@@ -175,7 +182,6 @@ if ($_SESSION['ventas']==1) {
 }else{
  require 'noacceso.php'; 
 }
-
 require 'footer.php';
  ?>
  <script src="scripts/venta.js"></script>

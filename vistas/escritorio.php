@@ -9,7 +9,7 @@ if (!isset($_SESSION['nombre'])) {
  
 require 'header.php';
 
-if ($_SESSION['escritorio']==1) {
+if ($_SESSION['graficos']==1) {
 
   require_once "../modelos/Consultas.php";
   $consulta = new Consultas();
@@ -98,20 +98,20 @@ if ($_SESSION['escritorio']==1) {
 </div>
 </div>
 <div class="panel-body">
-<!--<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
   <div class="box box-primary">
     <div class="box-header with-border">
-      Compras de los ultimos 10 dias
+    Ventas de los ultimos 12 meses
     </div>
     <div class="box-body">
       <canvas id="compras" width="400" height="300"></canvas>
     </div>
   </div>
-</div>-->
+</div>
 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
   <div class="box box-primary">
     <div class="box-header with-border">
-      Ventas de los ultimos 12 meses
+      
     </div>
     <div class="box-body">
       <canvas id="ventas" width="400" height="300"></canvas>
@@ -138,13 +138,13 @@ require 'footer.php';
  <script src="../public/js/Chart.bundle.min.js"></script>
  <script src="../public/js/Chart.min.js"></script>
  <script>
-/*var ctx = document.getElementById("compras").getContext('2d');
-var compras = new Chart(ctx, {
+var ctx = document.getElementById("compras").getContext('2d');
+/*var compras = new Chart(ctx, {
     type: 'bar',
     data: {
         labels: [<?php echo $fechasc ?>],
         datasets: [{
-            label: '# Compras en S/. de los últimos 10 dias',
+            label: '# Compras en $ de los últimos 10 dias',
             data: [<?php echo $totalesc ?>],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
@@ -182,14 +182,14 @@ var compras = new Chart(ctx, {
             }]
         }
     }
-});*/
-var ctx = document.getElementById("ventas").getContext('2d');
+});
+var ctx = document.getElementById("ventas").getContext('2d');*/
 var ventas = new Chart(ctx, {
     type: 'bar',
     data: {
         labels: [<?php echo $fechasv ?>],
         datasets: [{
-            label: '# Ventas en $ de los últimos 12 meses',
+            label: '# Ventas en $. de los últimos 12 meses',
             data: [<?php echo $totalesv ?>],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',

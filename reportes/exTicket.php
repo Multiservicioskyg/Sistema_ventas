@@ -81,7 +81,7 @@ $email="multiservicioskyg@gmail.com";
 			<td align="right">PRECIO</td>
 		</tr>
 		<tr>
-			<td colspan="3">=============================================</td>
+			<td colspan="3">=====================================</td>
 		</tr>
 		<?php
 		$rsptad = $venta->ventadetalles($_GET["id"]);
@@ -89,7 +89,7 @@ $email="multiservicioskyg@gmail.com";
 		while ($regd = $rsptad->fetch_object()) {
 		 	echo "<tr>";
 		 	echo "<td>".$regd->cantidad."</td>";
-		 	echo "<td>".$regd->articulo."</td>";
+		 	echo "<td>".$regd->servicio."</td>";
 		 	echo "<td align='right'>$ ".$regd->subtotal."</td>";
 		 	echo "</tr>";
 		 	$cantidad+=$regd->cantidad;
@@ -103,19 +103,19 @@ $email="multiservicioskyg@gmail.com";
 			<td align="right"><b>$ <?php echo $reg->total_venta; ?></b></td>
 		</tr>
 		<tr>
-			<td colspan="3">N° de articulos: <?php echo $cantidad; ?> </td>
+			<td colspan="2">N° de articulos: <?php echo $cantidad; ?> </td>
 		</tr>
 		<tr>
-			<td colspan="3">&nbsp;</td>
+			<td colspan="2">&nbsp;</td>
 		</tr>
 		<tr>
-			<td colspan="3" align="center">¡Gracias por su compra!</td>
+			<td colspan="2" align="center">¡Gracias por su compra!</td>
 		</tr>
 		<tr>
-			<td colspan="3" align="center">Vuelva Pronto</td>
+			<td colspan="2" align="center">Vuelva Pronto</td>
 		</tr>
 		<tr>
-			<td colspan="3" align="center">multiservicioskyg , San Salvador</td>
+			<td colspan="2" align="center">multiservicioskyg , San Salvador</td>
 		</tr>
 	</table>
 	<br>
