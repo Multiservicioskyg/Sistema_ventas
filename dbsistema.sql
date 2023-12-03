@@ -263,8 +263,7 @@ CREATE TABLE `servicio` (
   `idservicio` int(11) NOT NULL,
   `idcategoria` int(11) NOT NULL,
   `codigo` varchar(50) DEFAULT NULL,
-  `nombre` varchar(100) NOT NULL,
-  `stock` int(11) DEFAULT NULL,
+  `nombre` varchar(100) NOT NULL,  
   `descripcion` varchar(256) DEFAULT NULL,
   `imagen` varchar(50) DEFAULT NULL,
   `condicion` tinyint(4) DEFAULT 1
@@ -571,7 +570,7 @@ ALTER TABLE `detalle_ingreso`
 -- Filtros para la tabla `detalle_venta`
 --
 ALTER TABLE `detalle_venta`
-  ADD CONSTRAINT `fk_detalle_venta_articulo` FOREIGN KEY (`idservicio`) REFERENCES `servicio` (`idservicio`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_detalle_venta_servicio` FOREIGN KEY (`idservicio`) REFERENCES `servicio` (`idservicio`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_detalle_venta_venta` FOREIGN KEY (`idventa`) REFERENCES `venta` (`idventa`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
